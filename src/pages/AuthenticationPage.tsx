@@ -1,4 +1,4 @@
-import { UserAuthForm } from "@/components/Forms/UserAuthForm";
+// import { UserAuthForm } from "@/components/Forms/UserAuthForm";
 import { UserSignupForm } from "@/components/Forms/UserSignupForm";
 import logo from "../assets/logo.svg";
 
@@ -48,8 +48,8 @@ export default function AuthenticationPage() {
                 !
               </p>
             </div>
-            <UserAuthForm />
-            {/* <UserSignupForm /> */}
+            {/* <UserAuthForm /> */}
+            <UserSignupForm />
             <p className=" text-sm text-text-blue">
               Pas encore inscrit(e)?{" "}
               <a

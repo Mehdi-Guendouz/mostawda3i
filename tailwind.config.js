@@ -15,17 +15,22 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontSize: {
+      xl: "30px",
+      "2xl": "40px",
+    },
     extend: {
       colors: {
         "primary-blue": "#064789",
         "secondary-blue": "#45A9E5",
+        "secondary-creamy-blue": "#A3AED0",
         "text-blue": "#2B3674",
         "secondary-gray-600": "#A3AED0",
         "secondary-gray-300": "#F4F7FE",
+        background: "#F4F7FE",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
