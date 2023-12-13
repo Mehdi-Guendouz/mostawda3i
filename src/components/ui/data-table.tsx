@@ -57,9 +57,21 @@ export function DataTable<TData, TValue>({
   return (
     <div>
     <div className="rounded-2xl border">
+          <div className="w-[100%] flex justify-between">
+            <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">Details Produits</h3>
+            <div className="flex items-center py-4 mr-8">
+                  <Input
+                  placeholder="Filter products..."
+                  value={(table.getColumn("nomProduit")?.getFilterValue() as string) ?? ""}
+                  onChange={(event) =>
+                    table.getColumn("nomProduit")?.setFilterValue(event.target.value)
+                  }
+                  className="max-w-sm"
+                  />
+            </div>
+          </div>
       <Table>
         <TableHeader>
-          <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">Details Produits</h3>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
@@ -74,16 +86,6 @@ export function DataTable<TData, TValue>({
                   </TableHead>
                 )
               })}
-              <div className="flex items-center py-4 mr-4">
-                 <Input
-                placeholder="Filter products..."
-                value={(table.getColumn("nomProduit")?.getFilterValue() as string) ?? ""}
-                onChange={(event) =>
-                  table.getColumn("nomProduit")?.setFilterValue(event.target.value)
-                }
-                className="max-w-sm"
-                />
-              </div>
             </TableRow>
           ))}
         </TableHeader>
