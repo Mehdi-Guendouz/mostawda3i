@@ -22,9 +22,13 @@ module.exports = {
     extend: {
       colors: {
         "primary-blue": "#064789",
-        "secondary-blue": "#45A9E5",
+        "secondary-blue": {
+          100 : "#45a9e521",
+          500 : "#45A9E5"
+        },
         "secondary-creamy-blue": "#A3AED0",
         "text-blue": "#2B3674",
+        "text-primary-gray" : "#324054",
         "secondary-gray-600": "#A3AED0",
         "secondary-gray-300": "#F4F7FE",
         background: "#F4F7FE",
