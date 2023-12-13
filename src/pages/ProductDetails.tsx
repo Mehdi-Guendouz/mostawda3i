@@ -173,7 +173,7 @@ const produits: DetailProduit[] = [
   ];
   
   
-export default  function DemoPage() {
+export default  function DetailsProduits() {
   
 
   return (
