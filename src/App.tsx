@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import DetailsProduits from "./pages/ProductDetails";
 
+
 function App() {
   return (
     <Routes>
