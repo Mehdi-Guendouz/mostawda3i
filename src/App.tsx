@@ -3,7 +3,7 @@ import AuthenticationPage from "./pages/AuthenticationPage";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import DetailsProduits from "./pages/ProductDetails";
-
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
@@ -13,6 +13,8 @@ function App() {
         <Route element={<DetailsProduits />} path="/ProductPage" />
         <Route element={<Dashboard />} path="/" />
       </Route>
+      <Route path="*" element={<h1>404</h1>} />
+      <Route path="/landing" element={<LandingPage />} />
     </Routes>
   );
 }
