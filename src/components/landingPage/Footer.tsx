@@ -3,7 +3,7 @@ import { Icons } from "../Icons";
 
 const Footer = () => {
   return (
-    <div className="py-4 flex items-center flex-col w-full px-4 border border-[#42AAE6] border-solid mt-10">
+    <div className="py-4 flex items-center flex-col w-full px-4 border-t border-[#42AAE6] border-solid mt-10">
       <div className="flex items-center justify-between px-10 w-full">
         <img src={logo} alt="logo" className="w-[200px]" />
         <div className="flex flex-col items-start gap-1 text-primary-blue text-lg">
