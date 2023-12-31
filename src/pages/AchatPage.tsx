@@ -193,12 +193,11 @@ const achat: AchatProduit[] = [
     },
   ];
   
-export default  function AchatProduits() {
-  
+  export default function AchatProduits() {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable title="Achats" columns={columns} data={achat} filterColumnKey="Fournisseur" />
+      <DataTable tabletitle="Derniers Achats" title="Achats" columns={columns} data={achat} filterColumnKey="Fournisseur"/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
-import { Edit, Trash } from "react-feather";
+import { Edit, Trash } from "react-feather"
+import { useContext, useEffect } from "react";
 
 import { Button } from "@/components/ui/button"
 
@@ -12,11 +13,9 @@ export type AchatProduit = {
   quantite : number
   montant : number
   Fournisseur : string
-  //status: "pending" | "processing" | "success" | "failed"
 }
 
-export const columns: ColumnDef<AchatProduit>[] = [
-  {
+export const columns: ColumnDef<AchatProduit>[] = [  {
     accessorKey: "id_Achat",
     header: ({ column }) => {
         return (
@@ -107,7 +106,6 @@ export const columns: ColumnDef<AchatProduit>[] = [
           <Button
             variant="ghost"
             onClick={() => {
-              // Add your delete logic here
               console.log(achat.id_Achat);
             }}
           >
@@ -117,5 +115,4 @@ export const columns: ColumnDef<AchatProduit>[] = [
       );
     },
   },
-]
-
+]; 

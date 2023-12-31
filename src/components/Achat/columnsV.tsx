@@ -98,7 +98,7 @@ export const columns: ColumnDef<VenteProduit>[] = [
             variant="ghost"
             onClick={() => {
               // Add your edit logic here
-              console.log(achat.id_Achat);
+              console.log(achat.id_Vente);
             }}
           >
             <Edit className="h-4 w-4 mr-2" />
@@ -107,7 +107,7 @@ export const columns: ColumnDef<VenteProduit>[] = [
             variant="ghost"
             onClick={() => {
               // Add your delete logic here
-              console.log(achat.id_Achat);
+              console.log(achat.id_Vente);
             }}
           >
             <Trash className="h-4 w-4 mr-2 text-red-500" />

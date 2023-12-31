@@ -29,13 +29,15 @@ import { Input } from "@/components/ui/input"
 import { DataTablePagination } from "@/components/ui/data-table-pagination"
 
 interface DataTableProps<TData, TValue> {
+  tabletitle : string
   title : string
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
-  filterColumnKey: string
+  filterColumnKey: string,
 }
 
 export function DataTable<TData, TValue>({
+  tabletitle,
   title,
   columns,
   data,
@@ -69,7 +71,7 @@ export function DataTable<TData, TValue>({
     </div>
     <div className="rounded-2xl border">
           <div className="w-[100%] flex justify-between">
-            <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">{title}</h3>
+            <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">{tabletitle}</h3>
             <div className="flex items-center py-4 mr-8">
                   <Input
                   placeholder="Filter products..."
