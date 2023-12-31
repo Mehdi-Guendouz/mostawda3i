@@ -172,9 +172,7 @@ const produits: DetailProduit[] = [
       },
   ];
   
-  
 export default  function DetailsProduits() {
-  
 
   return (
     <div className="container mx-auto py-10">

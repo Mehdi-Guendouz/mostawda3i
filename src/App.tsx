@@ -6,6 +6,7 @@ import DetailsProduits from "./pages/ProductDetails";
 import AchatProduits from "./pages/AchatPage";
 import VenteProduits from "./pages/VentePage";
 import LandingPage from "./pages/LandingPage";
+import { AjouterAchat } from "./pages/AjouterAchat";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<AchatProduits />} path="/AchatPage" />
         <Route element={<VenteProduits />} path="/VentePage" />
         <Route element={<Dashboard />} path="/" />
+        <Route element={<AjouterAchat />} path="/AjouterAchat" />
       </Route>
       <Route path="*" element={<h1>404</h1>} />
       <Route path="/landing" element={<LandingPage />} />
