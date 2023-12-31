@@ -18,7 +18,6 @@ export type DetailProduit = {
   prixVente : number
   quantite : number
   dateAchat : string
-  //status: "pending" | "processing" | "success" | "failed"
 }
 
 export const columns: ColumnDef<DetailProduit>[] = [

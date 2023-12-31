@@ -178,7 +178,7 @@ export default  function DetailsProduits() {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={produits} />
+      <DataTable title="Details Produits" columns={columns} data={produits} filterColumnKey="nomProduit" />
     </div>
   )
 }

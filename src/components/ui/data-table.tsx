@@ -1,4 +1,7 @@
 import * as React from "react"
+import { Plus } from 'react-feather';
+
+import { Button } from "@/components/ui/button"
 
 import {
   ColumnDef,
@@ -26,13 +29,17 @@ import { Input } from "@/components/ui/input"
 import { DataTablePagination } from "@/components/ui/data-table-pagination"
 
 interface DataTableProps<TData, TValue> {
+  title : string
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  filterColumnKey: string
 }
 
 export function DataTable<TData, TValue>({
+  title,
   columns,
   data,
+  filterColumnKey,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -55,16 +62,20 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
+  <div>
+    <div className="flex items-center justify-between mb-12">
+      <h3 className="font-bold text-4xl text-title-blue">{title}</h3>
+      <Button className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter {title}</Button>
+    </div>
     <div className="rounded-2xl border">
           <div className="w-[100%] flex justify-between">
-            <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">Details Produits</h3>
+            <h3 className="font-bold text-xl text-title-blue pt-4 ml-8">{title}</h3>
             <div className="flex items-center py-4 mr-8">
                   <Input
                   placeholder="Filter products..."
-                  value={(table.getColumn("nomProduit")?.getFilterValue() as string) ?? ""}
+                  value={(table.getColumn(filterColumnKey)?.getFilterValue() as string) ?? ""}
                   onChange={(event) =>
-                    table.getColumn("nomProduit")?.setFilterValue(event.target.value)
+                    table.getColumn(filterColumnKey)?.setFilterValue(event.target.value)
                   }
                   className="max-w-sm"
                   />
@@ -114,6 +125,6 @@ export function DataTable<TData, TValue>({
       </Table>
       <DataTablePagination table={table} />
     </div>
-    </div>
+  </div>
   )
 }
