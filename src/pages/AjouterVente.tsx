@@ -238,7 +238,6 @@ export function AjouterVente() {
       <CardHeader>
         <div className="flex justify-between items-center">
             <CardTitle className="text-title-blue">Ajouter Vente</CardTitle>
-            <Button className="text-title-blue bg-white p-1 rounded-full"><X size={18} /></Button>
         </div>
       </CardHeader>
       <CardContent className="grid grid-cols-2 gap-8">
