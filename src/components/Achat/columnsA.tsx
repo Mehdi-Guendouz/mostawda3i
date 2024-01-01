@@ -1,8 +1,20 @@
+import { useState } from "react"
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { Edit, Trash } from "react-feather"
-
 import { Button } from "@/components/ui/button"
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+
+import { ModifierAchat } from '@/pages/ModifierAchat'; 
 
 export type AchatProduit = {
   id_Achat : string
@@ -90,18 +102,18 @@ export const columns: ColumnDef<AchatProduit>[] = [  {
     id: "actions",
     cell: ({ row }) => {
       const achat = row.original;
-
       return (
         <div className="flex space-x-2">
-          <Button
-            variant="ghost"
-            onClick={() => {
-              // Add your edit logic here
-              console.log(achat.id_Achat);
-            }}
-          >
-            <Edit className="h-4 w-4 mr-2" />
-          </Button>
+          <Dialog>
+            <DialogTrigger>
+              <Button variant="ghost">
+                  <Edit className="h-4 w-4 mr-2" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-fit">
+              <ModifierAchat />
+            </DialogContent>
+          </Dialog>
           <Button
             variant="ghost"
             onClick={() => {

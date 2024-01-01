@@ -237,12 +237,12 @@ export function ModifierVente() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div>
     <Card className="grid w-[700px] my-8">
       <CardHeader>
         <div className="flex justify-between items-center">
             <CardTitle className="text-title-blue">Modifier Vente</CardTitle>
-            <Button onClick={handleClose} className="text-title-blue bg-white p-1 rounded-full"><X size={18} /></Button>
+            {/*<Button onClick={handleClose} className="text-title-blue bg-white p-1 rounded-full"><X size={18} /></Button>*/}
         </div>
       </CardHeader>
       <CardContent className="grid grid-cols-2 gap-8">

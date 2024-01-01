@@ -1,6 +1,16 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { Edit, Trash } from "react-feather";
+import { ModifierVente } from "@/pages/ModifierVente";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 import { Button } from "@/components/ui/button"
 
@@ -94,15 +104,16 @@ export const columns: ColumnDef<VenteProduit>[] = [
 
       return (
         <div className="flex space-x-2">
-          <Button
-            variant="ghost"
-            onClick={() => {
-              // Add your edit logic here
-              console.log(achat.id_Vente);
-            }}
-          >
-            <Edit className="h-4 w-4 mr-2" />
-          </Button>
+          <Dialog>
+            <DialogTrigger>
+              <Button variant="ghost" onClick={() => { console.log(achat.id_Vente); }}>
+                  <Edit className="h-4 w-4 mr-2" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-fit">
+              <ModifierVente />
+            </DialogContent>
+          </Dialog>
           <Button
             variant="ghost"
             onClick={() => {

@@ -4,6 +4,17 @@ import { Plus } from 'react-feather';
 import { Button } from "@/components/ui/button"
 import { useNavigate } from 'react-router-dom';
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+import { AjouterAchat } from "./AjouterAchat";
+
 const achat: AchatProduit[] = [
     {
       id_Achat: "1",
@@ -198,17 +209,18 @@ const achat: AchatProduit[] = [
   
   export default function AchatProduits() {
 
-    const navigate = useNavigate();
-
-    const handleButtonClick = () => {
-      navigate('/AjouterAchat');
-    };
-
   return (
     <div>
       <div className="flex items-center justify-between mt-10">
         <h3 className="font-bold text-4xl text-title-blue">Achats</h3>
-        <Button onClick={handleButtonClick} className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter achat</Button>
+        <Dialog>
+            <DialogTrigger>
+            <Button className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter achat</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-fit">
+              <AjouterAchat />
+            </DialogContent>
+          </Dialog>
       </div>
       <div className="container mx-auto py-10">
         <DataTable tabletitle="Derniers Achats" columns={columns} data={achat} filterColumnKey="Fournisseur"/>
