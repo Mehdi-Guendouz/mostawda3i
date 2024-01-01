@@ -23,6 +23,7 @@ module.exports = {
           100 : "#45a9e521",
           500 : "#45A9E5"
         },
+        "input-bg-blue" : "#F4F7FE",
         "secondary-creamy-blue": "#A3AED0",
         "text-blue": "#2B3674",
         "text-primary-gray" : "#324054",
