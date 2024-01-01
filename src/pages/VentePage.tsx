@@ -1,5 +1,8 @@
 import { VenteProduit, columns } from "@/components/Achat/columnsV"
 import { DataTable } from "@/components/ui/data-table"
+import { Plus } from 'react-feather';
+import { Button } from "@/components/ui/button"
+import { useNavigate } from 'react-router-dom';
 
 const vente: VenteProduit[] = [
     {
@@ -194,11 +197,22 @@ const vente: VenteProduit[] = [
   ];
 
 export default  function VenteProduits() {
-  
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/AjouterVente');
+  };
 
   return (
-    <div className="container mx-auto py-10">
-      <DataTable tabletitle="Dernières ventes" title="Ventes" columns={columns} data={vente} filterColumnKey="client" />
+    <div>
+      <div className="flex items-center justify-between mt-10">
+        <h3 className="font-bold text-4xl text-title-blue">Ventes</h3>
+        <Button onClick={handleButtonClick} className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter vente</Button>
+      </div>
+      <div className="container mx-auto py-10">
+        <DataTable tabletitle="Dernières ventes" columns={columns} data={vente} filterColumnKey="client" />
+      </div>
     </div>
   )
 }

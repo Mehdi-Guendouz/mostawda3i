@@ -194,7 +194,7 @@ const produits: DetailProduit[] = [
     },
 ];
 
-export function AjouterAchat() {
+export function AjouterVente() {
 
     const navigate = useNavigate();
 
@@ -233,7 +233,7 @@ export function AjouterAchat() {
   };  
 
   const handleClose = () => {
-    navigate('/AchatPage');
+    navigate('/VentePage');
   };
 
   return (
@@ -241,7 +241,7 @@ export function AjouterAchat() {
     <Card className="grid w-[700px] my-8">
       <CardHeader>
         <div className="flex justify-between items-center">
-            <CardTitle className="text-title-blue">Ajouter Achat</CardTitle>
+            <CardTitle className="text-title-blue">Ajouter Vente</CardTitle>
             <Button onClick={handleClose} className="text-title-blue bg-white p-1 rounded-full"><X size={18} /></Button>
         </div>
       </CardHeader>
@@ -264,7 +264,7 @@ export function AjouterAchat() {
             </Select>
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="framework">Entrez la date de l'achat</Label>
+            <Label className='text-title-blue' htmlFor="framework">Entrez la date de vente</Label>
             <DatePickerDemo onSelect={setSelectedDate} />
             </div>
             <div>
@@ -293,12 +293,12 @@ export function AjouterAchat() {
             </Select>
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="additionalInput">Entrez la quantité achetée</Label>
+            <Label className='text-title-blue' htmlFor="additionalInput">Entrez la quantité vendue</Label>
             <Input id="additionalInput" placeholder="Quantité" />
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="additionalInput">Entrez le fournisseur</Label>
-            <Input id="additionalInput" placeholder="Fournisseur" />
+            <Label className='text-title-blue' htmlFor="additionalInput">Entrez le client</Label>
+            <Input id="additionalInput" placeholder="Client" />
             </div>
         </div>
     </CardContent>

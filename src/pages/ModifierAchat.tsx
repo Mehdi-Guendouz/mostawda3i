@@ -194,7 +194,7 @@ const produits: DetailProduit[] = [
     },
 ];
 
-export function AjouterAchat() {
+export function ModifierAchat() {
 
     const navigate = useNavigate();
 
@@ -241,7 +241,7 @@ export function AjouterAchat() {
     <Card className="grid w-[700px] my-8">
       <CardHeader>
         <div className="flex justify-between items-center">
-            <CardTitle className="text-title-blue">Ajouter Achat</CardTitle>
+            <CardTitle className="text-title-blue">Modifier Achat</CardTitle>
             <Button onClick={handleClose} className="text-title-blue bg-white p-1 rounded-full"><X size={18} /></Button>
         </div>
       </CardHeader>
@@ -249,7 +249,7 @@ export function AjouterAchat() {
         {/* Left Side */}
         <div className="flex flex-col space-y-4">
             <div>
-            <Label className='text-title-blue' htmlFor="framework">Sélectionnez le produit</Label>
+            <Label className='text-title-blue' htmlFor="framework">Modifiez le produit</Label>
             <Select>
                 <SelectTrigger id="framework">
                 <SelectValue placeholder="Select" />
@@ -264,11 +264,11 @@ export function AjouterAchat() {
             </Select>
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="framework">Entrez la date de l'achat</Label>
+            <Label className='text-title-blue' htmlFor="framework">Modifiez la date de l'achat</Label>
             <DatePickerDemo onSelect={setSelectedDate} />
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="additionalInput">Entrez le montant</Label>
+            <Label className='text-title-blue' htmlFor="additionalInput">Modifiez le montant</Label>
             <Input
                 id="additionalInput"
                 placeholder="Montant DA"
@@ -279,7 +279,7 @@ export function AjouterAchat() {
         {/* Right Side */}
         <div className="flex flex-col space-y-4">
             <div>
-            <Label className='text-title-blue' htmlFor="framework">Sélectionnez la variante</Label>
+            <Label className='text-title-blue' htmlFor="framework">Modifiez la variante</Label>
             <Select>
                 <SelectTrigger id="framework">
                 <SelectValue placeholder="Select" />
@@ -293,11 +293,11 @@ export function AjouterAchat() {
             </Select>
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="additionalInput">Entrez la quantité achetée</Label>
+            <Label className='text-title-blue' htmlFor="additionalInput">Modifiez la quantité achetée</Label>
             <Input id="additionalInput" placeholder="Quantité" />
             </div>
             <div>
-            <Label className='text-title-blue' htmlFor="additionalInput">Entrez le fournisseur</Label>
+            <Label className='text-title-blue' htmlFor="additionalInput">Modifiez le fournisseur</Label>
             <Input id="additionalInput" placeholder="Fournisseur" />
             </div>
         </div>

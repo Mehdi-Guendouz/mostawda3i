@@ -1,5 +1,8 @@
 import { AchatProduit, columns } from "@/components/Achat/columnsA"
 import { DataTable } from "@/components/ui/data-table"
+import { Plus } from 'react-feather';
+import { Button } from "@/components/ui/button"
+import { useNavigate } from 'react-router-dom';
 
 const achat: AchatProduit[] = [
     {
@@ -195,9 +198,21 @@ const achat: AchatProduit[] = [
   
   export default function AchatProduits() {
 
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+      navigate('/AjouterAchat');
+    };
+
   return (
-    <div className="container mx-auto py-10">
-      <DataTable tabletitle="Derniers Achats" title="Achats" columns={columns} data={achat} filterColumnKey="Fournisseur"/>
+    <div>
+      <div className="flex items-center justify-between mt-10">
+        <h3 className="font-bold text-4xl text-title-blue">Achats</h3>
+        <Button onClick={handleButtonClick} className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter achat</Button>
+      </div>
+      <div className="container mx-auto py-10">
+        <DataTable tabletitle="Derniers Achats" columns={columns} data={achat} filterColumnKey="Fournisseur"/>
+      </div>
     </div>
   )
 }
