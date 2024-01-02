@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -17,16 +17,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        "title-blue" : "#2B3674",
+        "title-blue": "#2B3674",
         "primary-blue": "#064789",
         "secondary-blue": {
-          100 : "#45a9e521",
-          500 : "#45A9E5"
+          100: "#45a9e521",
+          500: "#45A9E5",
         },
         "input-bg-blue" : "#F4F7FE",
         "secondary-creamy-blue": "#A3AED0",
         "text-blue": "#2B3674",
-        "text-primary-gray" : "#324054",
+        "text-primary-gray": "#324054",
         "secondary-gray-600": "#A3AED0",
         "secondary-gray-300": "#F4F7FE",
         background: "#F4F7FE",
@@ -68,6 +68,7 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: " 15px",
       },
       keyframes: {
         "accordion-down": {
@@ -86,4 +87,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

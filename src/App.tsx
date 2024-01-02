@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import DetailsProduits from "./pages/ProductDetails";
 import { UserInfoForm } from "./components/Forms/UserInfoForm";
 
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route element={<UserInfoForm />} path="/UserInfo" />
         <Route element={<Dashboard />} path="/" />
       </Route>
+      <Route path="*" element={<h1>404</h1>} />
+      <Route path="/landing" element={<LandingPage />} />
     </Routes>
   );
 }
