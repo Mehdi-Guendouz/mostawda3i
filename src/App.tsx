@@ -3,6 +3,8 @@ import AuthenticationPage from "./pages/AuthenticationPage";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import DetailsProduits from "./pages/ProductDetails";
+import { UserInfoForm } from "./components/Forms/UserInfoForm";
+
 import LandingPage from "./pages/LandingPage";
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route element={<AuthenticationPage />} path="/login" />
         <Route element={<DetailsProduits />} path="/ProductPage" />
+        <Route element={<UserInfoForm />} path="/UserInfo" />
         <Route element={<Dashboard />} path="/" />
       </Route>
       <Route path="*" element={<h1>404</h1>} />
