@@ -1,8 +1,8 @@
-import { UserAuthForm } from "@/components/Forms/UserAuthForm";
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import { UserSignupForm } from "@/components/Forms/UserSignupForm";
 
-export default function AuthenticationPage() {
+const RegisterPage = () => {
   return (
     <>
       <div className="md:hidden">
@@ -23,10 +23,10 @@ export default function AuthenticationPage() {
       </div>
       <div className="container relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
-          to="/register"
+          to="/login"
           className={"absolute right-4 top-4 md:right-8 md:top-8"}
         >
-          Register
+          login
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div className="relative z-20 text-lg font-medium">
@@ -41,21 +41,20 @@ export default function AuthenticationPage() {
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
             <div className="flex flex-col space-y-2 ">
               <h1 className="text-2xl font-semibold tracking-tight text-primary-blue">
-                Se Connecter
+                S’inscrire
               </h1>
               <p className="text-sm text-muted-foreground text-secondary-gray-600">
-                Saisissez votre e-mail et votre mot de passe pour vous connecter
-                !
+                Créez un compte et rejoignez-nous !
               </p>
             </div>
-            <UserAuthForm />
+            <UserSignupForm />
             <p className=" text-sm text-text-blue">
-              Pas encore inscrit(e)?{" "}
+              Vous avez déjà un compte?{" "}
               <Link
-                to="/register"
+                to="/login"
                 className="underline underline-offset-4 hover:text-primary text-primary-blue"
               >
-                Créez un compte
+                Se connecter
               </Link>
             </p>
           </div>
@@ -63,4 +62,6 @@ export default function AuthenticationPage() {
       </div>
     </>
   );
-}
+};
+
+export default RegisterPage;
