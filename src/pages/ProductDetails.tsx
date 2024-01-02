@@ -1,5 +1,7 @@
 import { DetailProduit, columns } from "@/components/DetailsProduit/columns"
 import { DataTable } from "@/components/ui/data-table"
+import { Plus } from 'react-feather';
+import { Button } from "@/components/ui/button"
 
 const produits: DetailProduit[] = [
     {
@@ -172,13 +174,17 @@ const produits: DetailProduit[] = [
       },
   ];
   
-  
 export default  function DetailsProduits() {
-  
 
   return (
-    <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={produits} />
+    <div>
+      <div className="flex items-center justify-between mt-10">
+        <h3 className="font-bold text-4xl text-title-blue">Details Produits</h3>
+        <Button className="font-bold text-title-blue border border-title-blue bg-white"><Plus className="h-5 w-5 mr-2" />Ajouter produit</Button>
+      </div>
+      <div className="container mx-auto py-10">
+        <DataTable tabletitle="Details Produits" columns={columns} data={produits} filterColumnKey="nomProduit" />
+      </div>
     </div>
   )
 }
