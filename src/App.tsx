@@ -5,6 +5,8 @@ import Layout from "./components/Layout";
 import DetailsProduits from "./pages/ProductDetails";
 import AchatProduits from "./pages/AchatPage";
 import VenteProduits from "./pages/VentePage";
+import { UserInfoForm } from "./components/Forms/UserInfoForm";
+
 import LandingPage from "./pages/LandingPage";
 import { AjouterAchat } from "./pages/AjouterAchat";
 import { AjouterVente } from "./pages/AjouterVente"; 
@@ -19,6 +21,8 @@ function App() {
         <Route element={<DetailsProduits />} path="/DetailsProduit" />
         <Route element={<AchatProduits />} path="/AchatPage" />
         <Route element={<VenteProduits />} path="/VentePage" />
+        <Route element={<DetailsProduits />} path="/ProductPage" />
+        <Route element={<UserInfoForm />} path="/UserInfo" />
         <Route element={<Dashboard />} path="/" />
         <Route element={<AjouterAchat />} path="/AjouterAchat" />
         <Route element={<AjouterVente />} path="/AjouterVente" />
