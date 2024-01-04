@@ -1,11 +1,14 @@
 import DashboardCard from "@/components/Cards/DashboardCard";
 import ProductVentCard from "@/components/Cards/ProductVentCard";
 import { Icons } from "@/components/Icons";
-import AddDepenseModal from "@/components/Modals/AddDepenseModal";
 import { CommandColum, Commands } from "@/components/Tables/CommandsColums";
 import { DataTableCommand } from "@/components/Tables/DataTableCommand";
 import PageTitle from "@/components/Text/PageTitle";
 import { Link } from "react-router-dom";
+import { AjouterVente } from "./AjouterVente";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
 const commandsData: Commands[] = [
   {
@@ -85,7 +88,17 @@ const Dashboard = () => {
     <div className=" space-y-2 min-h-screen py-6">
       <div className="flex px-4 justify-between items-center">
         <PageTitle title="Finances" />
-        <AddDepenseModal />
+        <Dialog>
+          <DialogTrigger>
+            <Button className="font-bold text-title-blue border border-title-blue bg-white">
+              <Plus className="h-5 w-5 mr-2" />
+              Ajouter vente
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-fit">
+            <AjouterVente />
+          </DialogContent>
+        </Dialog>
       </div>
       <div className="flex items-start justify-start gap-5 flex-wrap py-6">
         <DashboardCard

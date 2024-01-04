@@ -5,20 +5,38 @@ import { Icons } from "@/components/Icons";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { axiosInstance } from "@/api/config";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-  async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault();
+  const handleSubmit = () => {
+    const data = {
+      email,
+      password,
+    };
+    if (email === "" || password === "") {
+      return;
+    }
     setIsLoading(true);
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }
+    axiosInstance
+      .post("/auth/register", data)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setEmail("");
+        setPassword("");
+        setIsLoading(false);
+      });
+  };
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
@@ -43,7 +61,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <span className="bg-background px-2 text-muted-foreground">Ou</span>
         </div>
       </div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="grid gap-5">
           <div className="grid gap-2">
             <Label className="" htmlFor="email">
@@ -56,6 +74,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
               disabled={isLoading}
             />
           </div>
@@ -70,6 +90,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCapitalize="none"
               autoCorrect="off"
               disabled={isLoading}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </div>
           <Button disabled={isLoading}>

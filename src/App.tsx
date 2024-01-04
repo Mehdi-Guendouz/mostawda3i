@@ -7,11 +7,9 @@ import AchatProduits from "./pages/AchatPage";
 import VenteProduits from "./pages/VentePage";
 import { UserInfoForm } from "./components/Forms/UserInfoForm";
 import LandingPage from "./pages/LandingPage";
-import { AjouterAchat } from "./pages/AjouterAchat";
-import { AjouterVente } from "./pages/AjouterVente";
-import { ModifierAchat } from "./pages/ModifierAchat";
-import { ModifierVente } from "./pages/ModifierVente";
+
 import RegisterPage from "./pages/RegisterPage";
+import AddProduct from "./pages/AddProduct";
 
 function App() {
   return (
@@ -23,10 +21,11 @@ function App() {
         <Route element={<DetailsProduits />} path="/ProductPage" />
         <Route element={<UserInfoForm />} path="/UserInfo" />
         <Route element={<Dashboard />} path="/" />
-        <Route element={<AjouterAchat />} path="/AjouterAchat" />
+        {/* <Route element={<AjouterAchat />} path="/AjouterAchat" />
         <Route element={<AjouterVente />} path="/AjouterVente" />
         <Route element={<ModifierAchat />} path="/ModifierAchat" />
-        <Route element={<ModifierVente />} path="/ModifierVente" />
+        <Route element={<ModifierVente />} path="/ModifierVente" /> */}
+        <Route element={<AddProduct />} path="/addProduct" />
       </Route>
       <Route element={<AuthenticationPage />} path="/login" />
       <Route element={<RegisterPage />} path="/register" />
