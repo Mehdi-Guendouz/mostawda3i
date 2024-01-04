@@ -12,6 +12,7 @@ import { AjouterVente } from "./pages/AjouterVente";
 import { ModifierAchat } from "./pages/ModifierAchat";
 import { ModifierVente } from "./pages/ModifierVente";
 import RegisterPage from "./pages/RegisterPage";
+import AddProduct from "./pages/AddProduct";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route element={<AjouterVente />} path="/AjouterVente" />
         <Route element={<ModifierAchat />} path="/ModifierAchat" />
         <Route element={<ModifierVente />} path="/ModifierVente" />
+        <Route element={<AddProduct />} path="/addProduct" />
       </Route>
       <Route element={<AuthenticationPage />} path="/login" />
       <Route element={<RegisterPage />} path="/register" />
