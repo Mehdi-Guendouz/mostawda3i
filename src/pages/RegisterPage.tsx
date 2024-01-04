@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import registerImage from "../assets/img/register-image.png";
 import { UserSignupForm } from "@/components/Forms/UserSignupForm";
 
 const RegisterPage = () => {
@@ -35,6 +36,9 @@ const RegisterPage = () => {
               alt="logo"
               className="w-[200px] h-[70.377px] absolute left-0 top-0 translate-x-[-60px]"
             />
+          </div>
+          <div className="w-full h-full flex items-center justify-center">
+            <img src={registerImage} alt="logo" className="w-fit h-fit " />
           </div>
         </div>
         <div className="lg:p-8">

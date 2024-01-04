@@ -1,5 +1,6 @@
 import { UserAuthForm } from "@/components/Forms/UserAuthForm";
 import logo from "../assets/logo.svg";
+import loginImage from "../assets/img/login-image.png";
 import { Link } from "react-router-dom";
 
 export default function AuthenticationPage() {
@@ -35,6 +36,9 @@ export default function AuthenticationPage() {
               alt="logo"
               className="w-[200px] h-[70.377px] absolute left-0 top-0 translate-x-[-60px]"
             />
+          </div>
+          <div className="w-full h-full flex items-center justify-center">
+            <img src={loginImage} alt="logo" className="w-fit h-fit " />
           </div>
         </div>
         <div className="lg:p-8">

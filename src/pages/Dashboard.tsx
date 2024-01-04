@@ -5,7 +5,6 @@ import AddDepenseModal from "@/components/Modals/AddDepenseModal";
 import { CommandColum, Commands } from "@/components/Tables/CommandsColums";
 import { DataTableCommand } from "@/components/Tables/DataTableCommand";
 import PageTitle from "@/components/Text/PageTitle";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const commandsData: Commands[] = [
