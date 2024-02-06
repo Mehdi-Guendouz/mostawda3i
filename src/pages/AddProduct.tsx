@@ -1,5 +1,6 @@
 import { axiosInstance } from "@/api/config";
 import PageTitle from "@/components/Text/PageTitle";
+import { ImageUpload } from "@/components/fileUpload/Model";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -212,6 +213,12 @@ const AddProduct = () => {
                 </SelectContent>
               </Select>
             </div>
+          </div>
+          <h4 className="text-primary-blue capitalize w-full py-4 border-b border-solid border-primary-blue">
+            Images du Produit
+          </h4>
+          <div>
+            <ImageUpload />
           </div>
           <h4 className="text-primary-blue capitalize w-full py-4 border-b border-solid border-primary-blue">
             Informations de vente
